@@ -25,13 +25,9 @@ class App extends Component {
             <Router >
                 <div>
                     <Route exact path="/" component={Home} />
-                    <Link to="/" style={{color:'#ff0000'}}><div>点击跳转到Home</div></Link>
                     <Route path="/PageOne" component={PageOne} />
-                    <Link to="/PageOne/" style={{color:'#ff0000'}}><div>点击跳转到PageOne</div></Link>
                     <Route path="/PageTwo" component={PageTwo} />
-                    <Link to="/PageTwo/" style={{color:'#ff0000'}}><div>点击跳转到PageTwo</div></Link>
                     <Route path="/PageThree" component={PageThree} />
-                    <Link to="/PageThree/" style={{color:'#ff0000'}}><div>点击跳转到PageThree</div></Link>
                 </div>
             </Router>
         );
