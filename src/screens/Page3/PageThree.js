@@ -21,16 +21,8 @@ class PageThree extends React.Component{
                     </Menu.Item>
                 </Menu>
                 <div>This is PageThree!</div>
-                <Segment
-                    style={{
-                        textAlign:'center',width:'60%',margin:'10px auto'
-                    }}>
-                    文章一——长恨歌
-                </Segment>
-                <Segment
-                    style={{
-                        textAlign:'center',margin:'10px auto'
-                    }}>
+                <Segment style={{textAlign:'center',width:'60%',margin:'10px auto'}}>文章一——长恨歌</Segment>
+                <Segment style={{textAlign:'center',margin:'10px auto'}}>
                     汉皇重色思倾国，御宇多年求不得。<br/>
                     杨家有女初长成，养在深闺人未识。<br/>
                     天生丽质难自弃，一朝选在君王侧。<br/>

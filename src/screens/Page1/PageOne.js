@@ -6,7 +6,34 @@ import {Link} from "react-router-dom";
 import { Segment, Menu } from 'semantic-ui-react';
 
 class PageOne extends React.Component{
+
+    constructor(props) {
+        super(props);
+        this.state = {date: new Date()};
+    }
+
+    componentWillMount(){
+        this.timerID = setInterval(
+            () => this.tick(),
+            1000
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
+
+    tick() {
+        this.setState({date: new Date()});
+    }
+
+    renderH(){
+        const element = <h1 className="foo">这是什么</h1>;
+        return element;
+    }
+
     render(){
+        //  css 样式写的位置
         // let mystyle = {
         //     width:'200px',
         //     height:'80px',
@@ -34,6 +61,8 @@ class PageOne extends React.Component{
                     </Menu.Item>
                 </Menu>
                 <div className='mydiv'>This is PageOne!</div>
+                <div id='jsid'>{this.renderH()}</div>
+                <h2>现在是 {this.state.date.toLocaleTimeString()}.</h2>
             </div>
         );
     }
