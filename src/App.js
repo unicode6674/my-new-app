@@ -6,6 +6,7 @@ import Home from './screens/Home/Home';
 import PageOne from './screens/Page1/PageOne';
 import PageTwo from './screens/Page2/PageTwo';
 import PageThree from './screens/Page3/PageThree';
+import PageFour from './screens/Page4/PageFour';
 import View from './components/view/View'
 
 /* 组件*/
@@ -30,6 +31,7 @@ class App extends Component {
                     <Route path="/PageOne" component={PageOne} />
                     <Route path="/PageTwo" component={PageTwo} />
                     <Route path="/PageThree" component={PageThree} />
+                    <Route path="/PageFour" component={PageFour} />
                 </div>
                 <View name={this.state.propss}></View>
             </Router>

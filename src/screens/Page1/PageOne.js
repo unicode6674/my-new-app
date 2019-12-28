@@ -58,6 +58,9 @@ class PageOne extends React.Component{
                         <Link to="/PageThree/" style={{color:'#ff0000'}}>
                             <div>点击跳转到PageThree</div>
                         </Link>
+                        <Link to="/PageFour/" style={{color:'#ff0000'}}>
+                            <div>点击跳转到PageFour</div>
+                        </Link>
                     </Menu.Item>
                 </Menu>
                 <div className='mydiv'>This is PageOne!</div>

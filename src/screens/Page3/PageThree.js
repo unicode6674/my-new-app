@@ -17,7 +17,7 @@ class PageThree extends React.Component{
 
     // 子组件方法
     getChildrenMsg = (result, msg) => {
-        console.log(result, msg)
+        console.log(result, msg);
         // 很奇怪这里的result就是子组件那bind的第一个参数this，msg是第二个参数
         this.setState({
             childrenMsg: msg
@@ -25,7 +25,7 @@ class PageThree extends React.Component{
     };
 
     getLoginOr = (result, ttt) => {
-        console.log(result, ttt)
+        console.log(result, ttt);
         this.setState({
             isLoggedIn: ttt
         })
@@ -46,6 +46,9 @@ class PageThree extends React.Component{
                         </Link>
                         <Link to="/PageThree/" style={{color:'#ff0000'}}>
                             <div>点击跳转到PageThree</div>
+                        </Link>
+                        <Link to="/PageFour/" style={{color:'#ff0000'}}>
+                            <div>点击跳转到PageFour</div>
                         </Link>
                     </Menu.Item>
                 </Menu>
