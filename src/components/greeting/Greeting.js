@@ -21,12 +21,14 @@ class Greeting extends React.Component {
     handleLoginClick() {
         this.setState({isLoggedIn: true});
         this.props.parent.getLoginOr(this, this.state.isLoggedIn)
+
     }
 
     // 退出
     handleLogoutClick() {
         this.setState({isLoggedIn: false});
         this.props.parent.getLoginOr(this, this.state.isLoggedIn)
+
     }
 
     UserGreeting(props) {

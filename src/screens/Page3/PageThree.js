@@ -1,7 +1,8 @@
 import React from 'react';
 import { Segment, Menu } from 'semantic-ui-react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Greeting from "../../components/greeting/Greeting";
+import { findDOMNode }  from 'react-dom'
 
 class PageThree extends React.Component{
 
@@ -31,6 +32,11 @@ class PageThree extends React.Component{
         })
     };
 
+    changeProps = () => {
+        let initialNode  = findDOMNode(this.refs.refffff);
+        console.log(initialNode, '12121212')
+    };
+
 
     render(){
         return(
@@ -53,8 +59,9 @@ class PageThree extends React.Component{
                     </Menu.Item>
                 </Menu>
                 <div>This is PageThree!</div>
-                <div>子组件start</div>
+                <div ref='refffff'>子组件start  </div>
                 <Greeting isLoggedIn={this.state.isLoggedIn}  parent={ this } />
+                <div onClick={this.changeProps}>修改props 点击事件</div>
                 <div>子组件end</div>
                 <h3>子组件传来的值为：{ this.state.childrenMsg }</h3>
                 <Segment style={{textAlign:'center',width:'60%',margin:'10px auto'}}>文章一——长恨歌</Segment>

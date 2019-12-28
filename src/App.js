@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import { connect } from 'react-redux';
+import { addCount, reduceCount } from './store/actions/countAction';
+import PropTypes from 'prop-types';
 // 页面
 import { BrowserRouter as Router,Route} from 'react-router-dom';
 import Home from './screens/Home/Home';
@@ -34,9 +37,36 @@ class App extends Component {
                     <Route path="/PageFour" component={PageFour} />
                 </div>
                 <View name={this.state.propss}></View>
+                <div>
+                    <button onClick={()=>this.props.addCount()}>加1</button>
+                    {this.props.count}
+                    <button onClick={()=>this.props.reduceCount(5)}>减5</button>
+                </div>
             </Router>
         );
     }
 }
 
-export default App;
+
+// 定义方法mapStateToProps，参数为state，并且返回一个对象，对象内定义需要获取的store内的数据，
+// 由于是使用的countReducer中的数据，所以需要使用state.countReducer.属性名
+function  mapStateToProps(state) {
+    return {
+        count: state.countReducer.count
+    }
+}
+
+function mapActionToProps(dispatch) {
+    return {
+        addCount: () => dispatch(addCount()),
+        reduceCount: (num) => dispatch(reduceCount(num))
+    }
+}
+
+App.propTypes = {
+    count: PropTypes.number.isRequired,
+    addCount: PropTypes.func.isRequired,
+    reduceCount: PropTypes.func.isRequired
+}
+
+export default connect(mapStateToProps, mapActionToProps)(App);
