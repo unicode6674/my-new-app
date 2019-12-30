@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+require('./Nav.scss');
 
 class Nav extends React.Component {
     constructor(props) {
@@ -11,21 +12,11 @@ class Nav extends React.Component {
     render(){
         return(
             <div id={'nav'}>
-                <Link to="/" style={{color:'#ff0000'}}>
-                    <div>点击跳转到Home</div>
-                </Link>
-                <Link to="/PageOne/" style={{color:'#ff0000'}}>
-                    <div>点击跳转到PageOne</div>
-                </Link>
-                <Link to="/PageTwo/" style={{color:'#ff0000'}}>
-                    <div>点击跳转到PageTwo</div>
-                </Link>
-                <Link to="/PageThree/" style={{color:'#ff0000'}}>
-                    <div>点击跳转到PageThree</div>
-                </Link>
-                <Link to="/PageFour/" style={{color:'#ff0000'}}>
-                    <div>点击跳转到PageFour</div>
-                </Link>
+                <Link to="/"><div>Home</div></Link>
+                <Link to="/PageOne/"><div>PageOne</div></Link>
+                <Link to="/PageTwo/"><div>PageTwo</div></Link>
+                <Link to="/PageThree/"><div>PageThree</div></Link>
+                <Link to="/PageFour/"><div>PageFour</div></Link>
             </div>
         )
     }

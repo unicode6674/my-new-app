@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router,Route} from 'react-router-dom';
-import './App.css';
+import './App.scss';
 
 // 引入导航Nav
 import Nav from './components/Nav'
@@ -27,7 +27,7 @@ class App extends Component {
     return (
         <Router >
             <Nav></Nav>
-            <div>
+            <div id={'content'}>
                 <Route exact path="/" component={Home} />
                 <Route path="/PageOne" component={PageOne} />
                 <Route path="/PageTwo" component={PageTwo} />

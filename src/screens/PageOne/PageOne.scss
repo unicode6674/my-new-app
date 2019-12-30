@@ -1,12 +1,15 @@
 .my-style {
     width: 400px;
     height: 80px;
+    line-height: 80px;
     background-color: gray;
     font-size: 20px;
     text-align: center;
 
     .child {
         color: red;
+        height: 100%;
+        line-height: 80px;
         font-weight: bold;
     }
 }

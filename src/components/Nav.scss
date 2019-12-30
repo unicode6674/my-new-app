@@ -1,0 +1,22 @@
+#nav {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 1200px;
+    height: 50px;
+    background-color: aliceblue;
+    color: black;
+    font-weight: 700;
+    font-size: 26px;
+
+    a {
+      display: block;
+      width: 150px;
+        div {
+          height: 50px;
+          line-height: 50px;
+          text-align: center;
+        }
+    }
+}

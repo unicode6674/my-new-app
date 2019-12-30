@@ -8,6 +8,7 @@ class PageOne extends React.Component{
         let mystyle={
             width:'400px',
             height:'80px',
+            lineHeight: '80px',
             backgroundColor:'pink',
             fontSize:'24px',
             textAlign:'center'
@@ -15,8 +16,8 @@ class PageOne extends React.Component{
 
         return(
             <div>
-                <div>PageOne</div>
-                <div style={{ width:'400px', height:'80px', backgroundColor:'yellow', fontSize:'24px', textAlign:'center', color: 'blue' }}>引入样式的方法1</div>
+                <div className={'page-title'}>PageOne</div>
+                <div style={{ width:'400px', height:'80px', lineHeight: '80px',backgroundColor:'yellow', fontSize:'24px', textAlign:'center', color: 'blue' }}>引入样式的方法1</div>
                 <div style={mystyle}>引入样式的方法2</div>
                 <div className={'my-style'}>
                     <span>引入样式的方法3</span>

@@ -4,7 +4,7 @@ class PageFour extends React.Component{
     render(){
         return(
             <div>
-                PageFour页
+                <div className={'page-title'}> PageFour页</div>
             </div>
         );
     }

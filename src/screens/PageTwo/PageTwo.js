@@ -26,7 +26,7 @@ class PageTwo extends React.Component{
     render(){
         return(
             <div>
-                PageTwo页
+                <div className={'page-title'}>PageTwo页</div>
                 <div>{this.state.mytext.name}</div>
                 <div>{this.state.mytext.price}</div>
                 <div>{this.state.mytext.date}</div>
