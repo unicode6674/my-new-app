@@ -1,10 +1,12 @@
 import React from 'react';
+import Login from './../../components/Login'
 
 class PageThree extends React.Component{
     render(){
         return(
             <div>
-                PageThree页
+                pageThree
+                <Login></Login>
             </div>
         );
     }
