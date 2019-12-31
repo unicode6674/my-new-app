@@ -26,10 +26,14 @@ class PageTwo extends React.Component{
     render(){
         return(
             <div>
-                <div className={'page-title'}>PageTwo页</div>
-                <div>{this.state.mytext.name}</div>
-                <div>{this.state.mytext.price}</div>
-                <div>{this.state.mytext.date}</div>
+                <div className={'page-title'}>PageTwo页，练习请求</div>
+                <div style={{height:'100px', backgroundColor: "#189574"}}>
+                    <div>{this.state.mytext.name}</div>
+                    <div>{this.state.mytext.price}</div>
+                    <div>{this.state.mytext.date}</div>
+                </div>
+                <div>上面是发请求拿数据的显示的框</div>
+
             </div>
         );
     }
