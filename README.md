@@ -1,4 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+个人学习， 不喜勿喷
+拉下来的项目会和按照步骤写的项目会有一些区别， 主要是添加了样式， 还有其他的一些小变化， 但总体是没有变化的
+声明， 项目拉下来，如果依赖安装失败， 或者依赖安装完成后项目跑不起来， 请查看node和npm版本，
+本人是 node 10.15.3  npm 6.4.1 
+切换版本后， 删除依赖重新安装
+
+1. npm install 
+2. npm start
 
 ## Available Scripts
 
