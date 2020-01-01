@@ -3,6 +3,7 @@ import { HashRouter as Router,Route} from 'react-router-dom';
 import './App.scss';
 import Nav from './components/Nav';
 
+
 // 引入各个页面
 import Home from './../src/screens/Home/Home'
 import PageOne from './../src/screens/PageOne/PageOne'

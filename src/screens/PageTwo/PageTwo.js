@@ -1,11 +1,17 @@
 import React from 'react';
+import { Input, Button } from "antd";
+require('./PageTwo.scss')
+
 
 class PageTwo extends React.Component{
     constructor(props){ //构造函数
         super(props);
         this.state = {
             mytext : '',
-        }
+            param: 65
+        };
+        this.increaseQty2 = this.increaseQty2.bind(this);
+        this.increaseQty3 = this.increaseQty3.bind(this, this.state.param);
     }
 
     getDatas(){ //请求数据函数
@@ -33,10 +39,52 @@ class PageTwo extends React.Component{
                     <div>{this.state.mytext.date}</div>
                 </div>
                 <div>上面是发请求拿数据的显示的框</div>
+                <div>antD 练习</div>
+                <div className={'antd-div'}>
+                    <Input className={'input-box'} placeholder={'antd输入'}></Input>
+                    <Button className={'button-div'}>确认添加</Button>
+                </div>
+                <div>事件的绑定和传参</div>
+                <div className={'on-click'}>
+                    <p>第一种方法</p>
+                    <p>{'onClick={this.increaseQty.bind(this)}'}</p>
+                    <p>{'onClick={this.increaseQty.bind(this, 25)}'}</p>
+                    <Button className={'button-div'} onClick={this.increaseQty.bind(this)}>绑定</Button>
+                    <Button className={'button-div'} onClick={this.increaseQty.bind(this, 25)}>传参</Button>
+                </div>
+
+                <div className={'on-click'}>
+                    <p>第二种方法</p>
+                    <p>{'this.increaseQty = this.increaseQty.bind(this)}'}</p>
+                    <p>{'this.increaseQty = this.increaseQty.bind(this, "45454")'}</p>
+                    <Button className={'button-div'} onClick={this.increaseQty2}>绑定</Button>
+                    <Button className={'button-div'} onClick={this.increaseQty3}>传参</Button>
+                </div>
 
             </div>
         );
     }
+
+    // 测试事件绑定和传参
+    increaseQty($num, e){
+        console.log($num, e);  // 参数放前面
+        if ($num && e){
+            alert('传参'+$num);
+        }else {
+            alert("绑定")
+        }
+    }
+
+    increaseQty2(){
+        alert("2绑定")
+    }
+
+    increaseQty3($num, e){
+        console.log($num, e);  // 参数放前面
+        alert('2传参'+$num);
+    }
+
+
 }
 
 export default PageTwo;
