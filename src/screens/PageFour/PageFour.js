@@ -1,6 +1,7 @@
 import React from 'react';
 import store from './../../store/index'
 // 因为是index 可以简写为  import store from './../../store
+import { CHANGE_INPUT , ADD_ITEM , DELETE_ITEM } from './../../store/actionTypes.js'
 import { Input, Button, List } from 'antd'
 
 class PageFour extends React.Component{
@@ -41,29 +42,31 @@ class PageFour extends React.Component{
         );
     }
 
+    // 向输入框输入内容
     changeInputValue(e){
-        console.log(e.target.value);
         const action ={
-            type:'changeInput',
+            type:CHANGE_INPUT,
             value:e.target.value
         };
+        // action就创建好了，但是要通过dispatch()方法传递给store。我们在action下面再加入一句代码。
         store.dispatch(action)
     }
 
+    // 设置本页面的state
     storeChange(){
         this.setState(store.getState())
     }
 
+    // 添加内容
     onClick_addBtn(){
-        console.log(this, "54545645646");
-        const action = { type:'addItem'};
+        const action = { type:ADD_ITEM};
         store.dispatch(action);
     }
 
+    // 删除内容
     deleteItem(index){
-        console.log(index);
         const action = {
-            type:'deleteItem',
+            type:DELETE_ITEM,
             index
         };
         store.dispatch(action)

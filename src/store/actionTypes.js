@@ -1,2 +1,3 @@
-export const ADD_COUNT = 'ADD_COUNT';
-export const REDUCE_COUNT = 'REDUCE_COUNT';
+export const  CHANGE_INPUT = 'changeInput';
+export const  ADD_ITEM = 'addItem';
+export const  DELETE_ITEM = 'deleteItem';
