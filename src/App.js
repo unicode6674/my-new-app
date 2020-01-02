@@ -29,7 +29,7 @@ class App extends Component {
             <Nav></Nav>
             <div id={'content'}>
                 <Route exact path="/" component={Home} />
-                <Route path="/PageOne" component={PageOne} />
+                <Route path="/PageOne/:id" component={PageOne} />
                 <Route path="/PageTwo" component={PageTwo} />
                 <Route path="/PageThree" component={PageThree} />
                 <Route path="/PageFour" component={PageFour} />

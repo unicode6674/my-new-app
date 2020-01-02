@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input, Button } from "antd";
-require('./PageTwo.scss')
+require('./PageTwo.scss');
 
 
 class PageTwo extends React.Component{
@@ -49,8 +49,8 @@ class PageTwo extends React.Component{
                     <p>第一种方法</p>
                     <p>{'onClick={this.increaseQty.bind(this)}'}</p>
                     <p>{'onClick={this.increaseQty.bind(this, 25)}'}</p>
-                    <Button className={'button-div'} onClick={this.increaseQty.bind(this)}>绑定</Button>
-                    <Button className={'button-div'} onClick={this.increaseQty.bind(this, 25)}>传参</Button>
+                    <Button className={'button-div'} onClick={this.increaseQty.bind(this)}>0绑定</Button>
+                    <Button className={'button-div'} onClick={this.increaseQty1.bind(this, 25)}>1传参</Button>
                 </div>
 
                 <div className={'on-click'}>
@@ -66,7 +66,20 @@ class PageTwo extends React.Component{
                     <p>{'onClick={() => this.increaseQty()}'}</p>
                     <p>{"onClick={() => this.increaseQty(click me)}"}</p>
                     <Button className={'button-div'} onClick={() => this.increaseQty4()}>4绑定</Button>
-                    <Button className={'button-div'} onClick={() => this.increaseQty5('click me', this)}>5传参</Button>
+                    <Button className={'button-div'} onClick={() => this.increaseQty5('click me 5', this)}>5传参</Button>
+                </div>
+
+                <div className={'on-click'}>
+                    <p>第四种方法</p>
+                    <p>{'increaseQty = () => {console.log("点击")}'}</p>
+                    <p>{'increaseQty = (tt, this) => {console.log("点击")}'}</p>
+                    <Button className={'button-div'} onClick={() => this.increaseQty6()}>6绑定</Button>
+                    <Button className={'button-div'} onClick={() => this.increaseQty7('click me 7', this)}>7传参</Button>
+                </div>
+
+                <div>
+                    <p style={{margin:0, fontSize: '20px', color:'red'}}>路由query传参name  'this.props.location.query.name'</p>
+                    <div><span>name  </span><span>{'this.props.location.query.name'}</span></div>
                 </div>
 
             </div>
@@ -74,13 +87,12 @@ class PageTwo extends React.Component{
     }
 
     // 测试事件绑定和传参
-    increaseQty($num, e){
-        console.log($num, e);  // 参数放前面
-        if ($num && e){
-            alert('传参'+$num);
-        }else {
-            alert("绑定")
-        }
+    increaseQty(){
+        alert("0绑定")
+    }
+
+    increaseQty1($num){
+        alert('1传参'+$num);
     }
 
     increaseQty2(){
@@ -101,8 +113,14 @@ class PageTwo extends React.Component{
         alert('5传参'+$num);
     }
 
+    increaseQty6(){
+        alert('6传参');
+    }
 
-
+    increaseQty7($num, e){
+        console.log($num, e);  // 参数放前面
+        alert('7传参'+$num);
+    }
 
 }
 

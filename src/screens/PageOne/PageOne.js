@@ -11,6 +11,11 @@ class PageOne extends React.Component{
         this.reduction = this.reduction.bind(this);
     };
 
+    // 生命周期
+    componentWillMount(){
+        console.log(this.props.match.params.id);
+    }
+
 
     render(){
         // 引入样式的方法2
@@ -39,6 +44,10 @@ class PageOne extends React.Component{
                     <div style={{cursor:"pointer"}} onClick={this.dianJi}>点击一下value＋1</div>
                     <div style={{cursor:"pointer"}} onClick={this.reduction}>点击一下value - 1</div>
                     <div style={{cursor:"pointer"}} onClick={this.reduction5.bind(this)}>点击一下value - 5</div>
+                </div>
+                <div>
+                    <p style={{margin:0, fontSize: '20px', color:'red'}}>路由params传参id  'this.props.match.params.id'</p>
+                    <div><span>id</span><span>{this.props.match.params.id}</span></div>
                 </div>
             </div>
         );
