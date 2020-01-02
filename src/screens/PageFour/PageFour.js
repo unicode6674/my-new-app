@@ -24,8 +24,9 @@ class PageFour extends React.Component{
                 <div>练习Redux</div>
                 <div>
                     <Input
-                        placeholder={this.state.countReducer.inputValue}
+                        placeholder={'输入事情'}
                         style={{ width:'250px', marginRight:'10px'}}
+                        value={this.state.countReducer.inputValue}
                         onChange={this.changeInputValue}
                     />
                     <Button type="primary" onClick={() => this.onClick_addBtn()}>增加</Button>
@@ -33,7 +34,7 @@ class PageFour extends React.Component{
                 <div style={{margin:'10px',width:'300px'}}>
                     <List
                         dataSource={this.state.countReducer.list}
-                        renderItem={item=>(<List.Item>{item}</List.Item>)}
+                        renderItem={(item, index)=>(<List.Item style={{cursor:"pointer"}} onClick={this.deleteItem.bind(this,index)}>{item}</List.Item>)}
                     />
                 </div>
             </div>
@@ -57,6 +58,15 @@ class PageFour extends React.Component{
         console.log(this, "54545645646");
         const action = { type:'addItem'};
         store.dispatch(action);
+    }
+
+    deleteItem(index){
+        console.log(index);
+        const action = {
+            type:'deleteItem',
+            index
+        };
+        store.dispatch(action)
     }
 }
 
