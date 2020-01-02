@@ -1,9 +1,10 @@
 import React from 'react';
 import store from './../../store/index'
+import axios from 'axios'
 // 因为是index 可以简写为  import store from './../../store
 // import { CHANGE_INPUT , ADD_ITEM , DELETE_ITEM } from './../../store/actionTypes.js';
 // 添加引入的方法后的绗棉的actionTypes就可以不引入了， 直接在countAction中引入就行了
-import { changeInputAction, addItemAction, deleteItemAction } from "./../../store/actions/countAction";
+import { changeInputAction, addItemAction, deleteItemAction, getListAction } from "./../../store/actions/countAction";
 import { Input, Button, List } from 'antd'
 
 class PageFour extends React.Component{
@@ -15,6 +16,20 @@ class PageFour extends React.Component{
         this.storeChange = this.storeChange.bind(this);  //转变this指向
         store.subscribe(this.storeChange) //订阅Redux的状态
     };
+
+    // 生命周期
+    componentWillMount(){
+        console.log('生命周期');
+    }
+
+    componentDidMount(){
+        axios.get('http://127.0.0.1:8081/json').then((res)=>{
+            console.log(res);
+            const data = res;
+            const action = getListAction(data);
+            store.dispatch(action);
+        })
+    }
 
     render(){
         return(
@@ -35,6 +50,14 @@ class PageFour extends React.Component{
                         dataSource={this.state.countReducer.list}
                         renderItem={(item, index)=>(<List.Item style={{cursor:"pointer"}} onClick={this.deleteItem.bind(this,index)}>{item}</List.Item>)}
                     />
+                </div>
+                <div>
+                    <div style={{fontSize: '20px', color: 'red'}}>请求拿回来数据写入store</div>
+                    <div>
+                        <div>{this.state.countReducer.arrayList.name}</div>
+                        <div>{this.state.countReducer.arrayList.price}</div>
+                        <div>{this.state.countReducer.arrayList.date}</div>
+                    </div>
                 </div>
             </div>
         );

@@ -1,4 +1,4 @@
-import  { CHANGE_INPUT, ADD_ITEM, DELETE_ITEM } from './../actionTypes.js'
+import  { GET_LIST, CHANGE_INPUT, ADD_ITEM, DELETE_ITEM } from './../actionTypes.js'
 
 // 定义初始化的数据，根据实际数据即可
 const initializeState = {
@@ -8,7 +8,8 @@ const initializeState = {
         '中午下班游泳一小时',
         '下午茶',
         '晚上开始睡觉'
-    ]
+    ],
+    arrayList: []
 };
 
 // 定义reducer，第一个参数为state，赋予默认值为上边定义的initializeState，
@@ -35,6 +36,12 @@ export default function countReducer(state = initializeState,action) {
     if(action.type === DELETE_ITEM ){ //根据type值，编写业务逻辑
         let newState = JSON.parse(JSON.stringify(state));
         newState.list.splice(action.index,1);  //删除数组中对应的值
+        return newState
+    }
+
+    if(action.type === GET_LIST ){ //根据type值，编写业务逻辑
+        let newState = JSON.parse(JSON.stringify(state));
+        newState.arrayList = action.data.data; //复制性的List数组进去
         return newState
     }
 

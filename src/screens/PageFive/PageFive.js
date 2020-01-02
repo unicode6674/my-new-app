@@ -1,6 +1,7 @@
 import React from 'react';
 // 这里相对于pagefour 增加了引入  PageFiveUI  删除了antd 组件的引入  然后就是render 中的全部换成引入的ui组件
-import PageFiveUI from './PageFiveUI'
+// import PageFiveUI from './PageFiveUI'
+import PageFiveUI from './PageFiveUIno';  // 无状态组件   提高性能
 import store from "../../store";
 import {addItemAction, changeInputAction, deleteItemAction} from "../../store/actions/countAction";
 
