@@ -15,10 +15,6 @@ class PageFour extends React.Component{
         this.storeChange = this.storeChange.bind(this);  //转变this指向
         store.subscribe(this.storeChange) //订阅Redux的状态
     };
-    // 生命周期
-    componentWillMount(){
-        console.log(this.state, '121212121');
-    }
 
     render(){
         return(

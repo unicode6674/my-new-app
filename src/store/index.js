@@ -15,7 +15,9 @@ const rootReducer = combineReducers({
 // });
 
 // 创建初始化的state，初始化为一个空对象即可，默认的数据建议都写在reducer上
-const initializeState = {}; // 定义初始化的state
+const initializeState = {
+
+}; // 定义初始化的state
 
 
 // 创建store，第一个参数是根reducer，第二个参数可以是初始化的state，也可以是别的，暂且不提

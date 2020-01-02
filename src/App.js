@@ -10,6 +10,7 @@ import PageOne from './../src/screens/PageOne/PageOne'
 import PageTwo from './../src/screens/PageTwo/PageTwo'
 import PageThree from './../src/screens/PageThree/PageThree'
 import PageFour from './../src/screens/PageFour/PageFour'
+import PageFive from "./screens/PageFive/PageFive";
 
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
                 <Route path="/PageTwo" component={PageTwo} />
                 <Route path="/PageThree" component={PageThree} />
                 <Route path="/PageFour" component={PageFour} />
+                <Route path="/PageFive" component={PageFive} />
             </div>
         </Router>
         );

@@ -18,6 +18,7 @@ class Nav extends React.Component {
                 <Link to="/PageTwo/"><div>PageTwo</div></Link>
                 <Link to="/PageThree/"><div>PageThree</div></Link>
                 <Link to="/PageFour/"><div>PageFour</div></Link>
+                <Link to="/PageFive/"><div>PageFive</div></Link>
             </div>
         )
     }
