@@ -81,7 +81,6 @@ class PageTwo extends React.Component{
                     <p style={{margin:0, fontSize: '20px', color:'red'}}>路由query传参name  'this.props.location.query.name'</p>
                     <div><span>name  </span><span>{'this.props.location.query.name'}</span></div>
                 </div>
-
             </div>
         );
     }
