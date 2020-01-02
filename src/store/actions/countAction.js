@@ -1,14 +1,16 @@
-import { ADD_COUNT, REDUCE_COUNT } from '../actionTypes'
+import { CHANGE_INPUT, ADD_ITEM, DELETE_ITEM } from './../actionTypes'
 
-export function addCount() {
-    return {
-        type: ADD_COUNT
-    }
-}
+export const changeInputAction = (value)=>({
+    type: CHANGE_INPUT,
+    value
+});
 
-export function reduceCount(num) {
-    return {
-        type: REDUCE_COUNT,
-        num
-    }
-}
+export const addItemAction = ()=>({
+    type: ADD_ITEM,
+});
+
+export const deleteItemAction = (index)=>({
+    type: DELETE_ITEM,
+    index
+});
+

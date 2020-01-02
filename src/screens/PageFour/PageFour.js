@@ -1,7 +1,9 @@
 import React from 'react';
 import store from './../../store/index'
 // 因为是index 可以简写为  import store from './../../store
-import { CHANGE_INPUT , ADD_ITEM , DELETE_ITEM } from './../../store/actionTypes.js'
+// import { CHANGE_INPUT , ADD_ITEM , DELETE_ITEM } from './../../store/actionTypes.js';
+// 添加引入的方法后的绗棉的actionTypes就可以不引入了， 直接在countAction中引入就行了
+import { changeInputAction, addItemAction, deleteItemAction } from "./../../store/actions/countAction";
 import { Input, Button, List } from 'antd'
 
 class PageFour extends React.Component{
@@ -44,10 +46,12 @@ class PageFour extends React.Component{
 
     // 向输入框输入内容
     changeInputValue(e){
-        const action ={
-            type:CHANGE_INPUT,
-            value:e.target.value
-        };
+        // const action ={
+        //     type:CHANGE_INPUT,
+        //     value:e.target.value
+        // };
+        // 引入后 changeInputAction
+        const action =  changeInputAction(e.target.value);
         // action就创建好了，但是要通过dispatch()方法传递给store。我们在action下面再加入一句代码。
         store.dispatch(action)
     }
@@ -59,16 +63,17 @@ class PageFour extends React.Component{
 
     // 添加内容
     onClick_addBtn(){
-        const action = { type:ADD_ITEM};
+        const action = addItemAction();
         store.dispatch(action);
     }
 
     // 删除内容
     deleteItem(index){
-        const action = {
-            type:DELETE_ITEM,
-            index
-        };
+        // const action = {
+        //     type:DELETE_ITEM,
+        //     index
+        // };
+        const action = deleteItemAction(index);
         store.dispatch(action)
     }
 }
