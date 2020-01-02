@@ -57,8 +57,16 @@ class PageTwo extends React.Component{
                     <p>第二种方法</p>
                     <p>{'this.increaseQty = this.increaseQty.bind(this)}'}</p>
                     <p>{'this.increaseQty = this.increaseQty.bind(this, "45454")'}</p>
-                    <Button className={'button-div'} onClick={this.increaseQty2}>绑定</Button>
-                    <Button className={'button-div'} onClick={this.increaseQty3}>传参</Button>
+                    <Button className={'button-div'} onClick={this.increaseQty2}>2绑定</Button>
+                    <Button className={'button-div'} onClick={this.increaseQty3}>3传参</Button>
+                </div>
+
+                <div className={'on-click'}>
+                    <p>第三种方法</p>
+                    <p>{'onClick={() => this.increaseQty()}'}</p>
+                    <p>{"onClick={() => this.increaseQty(click me)}"}</p>
+                    <Button className={'button-div'} onClick={() => this.increaseQty4()}>4绑定</Button>
+                    <Button className={'button-div'} onClick={() => this.increaseQty5('click me', this)}>5传参</Button>
                 </div>
 
             </div>
@@ -81,8 +89,19 @@ class PageTwo extends React.Component{
 
     increaseQty3($num, e){
         console.log($num, e);  // 参数放前面
-        alert('2传参'+$num);
+        alert('3传参'+$num);
     }
+
+    increaseQty4(){
+        alert('4传参');
+    }
+
+    increaseQty5($num, e){
+        console.log($num, e);  // 参数放前面
+        alert('5传参'+$num);
+    }
+
+
 
 
 }
