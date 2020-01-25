@@ -4,7 +4,7 @@ class Home extends React.Component{
     render(){
         return(
             <div>
-                Home页
+                <div className={'page-title'}>Home页</div>
             </div>
         );
     }

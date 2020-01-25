@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router,Route} from 'react-router-dom';
-import './App.css';
+import { HashRouter as Router,Route} from 'react-router-dom';
+import './App.scss';
+import Nav from './components/Nav';
 
-// 引入导航Nav
-import Nav from './components/Nav'
+
 // 引入各个页面
 import Home from './../src/screens/Home/Home'
 import PageOne from './../src/screens/PageOne/PageOne'
 import PageTwo from './../src/screens/PageTwo/PageTwo'
 import PageThree from './../src/screens/PageThree/PageThree'
 import PageFour from './../src/screens/PageFour/PageFour'
+import PageFive from "./screens/PageFive/PageFive";
 
 
 class App extends Component {
@@ -25,14 +26,15 @@ class App extends Component {
   /*虚拟dom */
   render() {
     return (
-        <Router >
+        <Router>
             <Nav></Nav>
-            <div>
+            <div id={'content'}>
                 <Route exact path="/" component={Home} />
-                <Route path="/PageOne" component={PageOne} />
+                <Route path="/PageOne/:id" component={PageOne} />
                 <Route path="/PageTwo" component={PageTwo} />
                 <Route path="/PageThree" component={PageThree} />
                 <Route path="/PageFour" component={PageFour} />
+                <Route path="/PageFive" component={PageFive} />
             </div>
         </Router>
         );
